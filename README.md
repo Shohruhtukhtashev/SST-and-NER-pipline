@@ -1,5 +1,6 @@
-# Project Docs
-
+# STT and NER pipeline
+----
+----
 # STT(Speech to Text)
 ## About model
 Whisper Small is an AI model that can recognize and translate speech with impressive accuracy. Trained on 680,000 hours of audio data, it can handle a wide range of languages and accents, and even translate speech in real-time.
