@@ -13,7 +13,7 @@ Whisper Small is an AI model that can recognize and translate speech with impres
 Model is trained on P100 GPU with 16 GB of VRAM on Kaggle for ~8.5 hours
 
 ### Whisper fine tuning codes
-### 📗
+### 📗 [kaggle notebook](https://www.kaggle.com/code/shohruhtuxtashev/whisper-small-uz-github/edit)
 
 ### It achieves the following results on the evaluation set:
 - Loss: 0.2628
@@ -43,7 +43,7 @@ The following hyperparameters were used during training:
 
 ### Use the model from the Hugging Face platform, you can use the following code:
 **Whisper fine tuning model link**
-  - [Fine tuning model](https://huggingface.co/tukhtashevshohruh/whisper-small-uz)
+  - ✨[Fine tuning model](https://huggingface.co/tukhtashevshohruh/whisper-small-uz)
 
 ## Loading and Using the Model
 ```python
@@ -89,11 +89,15 @@ Matn: propaganda uch turt besh yoxud miyaning chirishi bu kontentdan olgan xulas
 #### Dataset size is 24.7 MB
 
 ## XLM-RoBERTa-base model Fine tuning for Uzbek language
+### Preparing dataset codes 👉 [Notebook](https://github.com/Shohruhtukhtashev/STT-and-NER-pipeline/blob/master/ner-preparing-data.ipynb)
+I have explained in the notebook how I cleaned and processed the dataset.
 
-## xlm-roberta-base fine tuning codes
-### 📗
+### xlm-roberta-base fine-tuning codes
+### 📗[Notebook](https://github.com/Shohruhtukhtashev/STT-and-NER-pipeline/blob/master/fine%20tuning%20codes/xlm-roberta-lowercase-github.ipynb)
 
 ## Hyperparameter tuning
+### Find best hyperparameter codes
+### 📗[Notebook](https://github.com/Shohruhtukhtashev/STT-and-NER-pipeline/blob/master/fine%20tuning%20codes/find-best-hyperparameter.ipynb)
 * ### Learning rate
 | Learning Rate | Training Loss | Validation Loss | Precision | Recall  | F1       |
 |--------------|--------------|----------------|-----------|---------|---------|
@@ -153,13 +157,14 @@ The model can identify the following NER categories:
 
 
 ### XLM-RoBERTa-base fine tuning model link
-**[Fine tuning model](https://huggingface.co/tukhtashevshohruh/xlm-roberta-base-uz-ver/tree/main)**
+
+- **✨[Fine tuning model](https://huggingface.co/tukhtashevshohruh/xlm-roberta-base-lowercase-high-accuracy)**
 
 ## Loading and Using the Model
 ```python
 from transformers import pipeline, AutoTokenizer, AutoModelForTokenClassification
 
-model_name = "tukhtashevshohruh/xlm-roberta-base-uz-ver"
+model_name = "tukhtashevshohruh/xlm-roberta-base-lowercase-high-accuracy"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
 model = AutoModelForTokenClassification.from_pretrained(model_name_or_path)
@@ -170,12 +175,12 @@ nm = pipeline("ner", model=model, tokenizer=tokenizer)
 ```python
 from transformers import pipeline, AutoTokenizer, AutoModelForTokenClassification
 
-model_name_or_path = "tukhtashevshohruh/xlm-roberta-base-uz-ver"
+model_name_or_path = "tukhtashevshohruh/xlm-roberta-base-lowercase-high-accuracy"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
 model = AutoModelForTokenClassification.from_pretrained(model_name_or_path)
 
-text = "O‘zbekiston milliy jamoasi himoyachisi Abduqodir Husanov «Manchester Siti» klubidagi dastlabki oyidayoq eng yaxshi futbolchi deb topildi."
+text = "Samarqanddanmikan yoki Toshkentdanmikan anig'ini bilmadim' dedi Shohruh umirov"
 nlp = pipeline("ner", model=model, tokenizer=tokenizer)
 
 ner = nlp(text)
@@ -185,18 +190,27 @@ for entity in ner:
 ```
 Results:
 ```python
-{'entity': 'B-LOC', 'score': 0.778564, 'index': 1, 'word': '▁O', 'start': 0, 'end': 1}
-{'entity': 'I-LOC', 'score': 0.7756602, 'index': 2, 'word': "'", 'start': 1, 'end': 2}
-{'entity': 'I-LOC', 'score': 0.79770935, 'index': 3, 'word': 'zbekiston', 'start': 2, 'end': 11}
-{'entity': 'B-PERSON', 'score': 0.99082804, 'index': 8, 'word': '▁Abdu', 'start': 39, 'end': 43}
-{'entity': 'I-PERSON', 'score': 0.98386127, 'index': 9, 'word': 'qo', 'start': 43, 'end': 45}
-{'entity': 'I-PERSON', 'score': 0.9829297, 'index': 10, 'word': 'dir', 'start': 45, 'end': 48}
-{'entity': 'I-PERSON', 'score': 0.9841404, 'index': 11, 'word': '▁Hus', 'start': 49, 'end': 52}
-{'entity': 'I-PERSON', 'score': 0.9848236, 'index': 12, 'word': 'an', 'start': 52, 'end': 54}
-{'entity': 'I-PERSON', 'score': 0.9853153, 'index': 13, 'word': 'ov', 'start': 54, 'end': 56}
-{'entity': 'B-ORG', 'score': 0.9168285, 'index': 15, 'word': 'Man', 'start': 58, 'end': 61}
-{'entity': 'I-ORG', 'score': 0.9314855, 'index': 16, 'word': 'chester', 'start': 61, 'end': 68}
-{'entity': 'I-ORG', 'score': 0.92144626, 'index': 17, 'word': '▁Siti', 'start': 69, 'end': 73}
+{'entity': 'B-LOC', 'score': 0.74778676, 'index': 2, 'word': 'Sam', 'start': 1, 'end': 4}
+{'entity': 'I-LOC', 'score': 0.76890993, 'index': 3, 'word': 'ar', 'start': 4, 'end': 6}
+{'entity': 'I-LOC', 'score': 0.77585006, 'index': 4, 'word': 'qan', 'start': 6, 'end': 9}
+{'entity': 'I-LOC', 'score': 0.7489506, 'index': 5, 'word': 'd', 'start': 9, 'end': 10}
+{'entity': 'B-LOC', 'score': 0.76504, 'index': 10, 'word': '▁Toshkent', 'start': 24, 'end': 32}
+{'entity': 'B-PERSON', 'score': 0.9199773, 'index': 23, 'word': '▁Sho', 'start': 65, 'end': 68}
+{'entity': 'I-PERSON', 'score': 0.925115, 'index': 24, 'word': 'h', 'start': 68, 'end': 69}
+{'entity': 'I-PERSON', 'score': 0.926187, 'index': 25, 'word': 'ruh', 'start': 69, 'end': 72}
+{'entity': 'I-PERSON', 'score': 0.93724865, 'index': 26, 'word': '▁um', 'start': 73, 'end': 75}
+{'entity': 'I-PERSON', 'score': 0.9402853, 'index': 27, 'word': 'i', 'start': 75, 'end': 76}
+{'entity': 'I-PERSON', 'score': 0.9250853, 'index': 28, 'word': 'rov', 'start': 76, 'end': 79}
 ```
 
+----
 
+----
+
+# STT and NER pipeline
+## About
+#### At this stage, you integrate STT and NER:  
+* Audio file is input → The STT model converts it into text → The NER model identifies key entities in the text
+
+### pipeline codes
+### 📗 [Notebook](https://www.kaggle.com/code/shohruhtuxtashev/notebooka9776e3a4f/edit)
