@@ -13,7 +13,7 @@ Whisper Small is an AI model that can recognize and translate speech with impres
 Model is trained on P100 GPU with 16 GB of VRAM on Kaggle for ~8.5 hours
 
 ### Whisper fine tuning codes
-### 📗 [kaggle notebook](https://www.kaggle.com/code/shohruhtuxtashev/whisper-small-uz-github/edit)
+### 📗 [kaggle notebook](https://www.kaggle.com/code/shohruhtuxtashev/whisper-small-uz-github)
 
 ### It achieves the following results on the evaluation set:
 - Loss: 0.2628
@@ -213,4 +213,4 @@ Results:
 * Audio file is input → The STT model converts it into text → The NER model identifies key entities in the text
 
 ### pipeline codes
-### 📗 [Notebook](https://www.kaggle.com/code/shohruhtuxtashev/notebooka9776e3a4f/edit)
+### 📗 [Notebook](https://www.kaggle.com/code/shohruhtuxtashev/notebooka9776e3a4f)
