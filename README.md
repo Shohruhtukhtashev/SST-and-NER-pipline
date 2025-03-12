@@ -122,7 +122,7 @@ The best **F1 Score** is **0.550**.
 ### Categories
 The model can identify the following NER categories:
 - **DATE(Date expressions)**
-- **LAW(Laws or regulations)**
+- **GPE(Countries, cities, states**
 - **LOC(Location names)**
 - **ORG(Organization names)**
 - **PERSON(Person names)**
